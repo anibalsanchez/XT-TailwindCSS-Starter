@@ -43,9 +43,9 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html',
     }),
-    new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/*`),
-      whitelistPatterns: [/w-/],
-    }),
+    // new PurgecssPlugin({
+    //   paths: glob.sync(`${PATHS.src}/*`),
+    //   whitelistPatterns: [/w-/],
+    // }),
   ],
 };

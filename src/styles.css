@@ -1,12 +1,10 @@
-@tailwind preflight;
-
+@tailwind base;
 @tailwind components;
-
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
-.pin-32-lite {
+.top-32-lite {
   top: 7rem
 }
 
@@ -23,15 +21,15 @@ p {
 }
 
 h2 {
-  @apply text-3xl mb-3
+  @apply text-3xl mb-3 font-bold
 }
 
 h3 {
-  @apply text-2xl mb-8
+  @apply text-2xl mb-8 font-bold
 }
 
 h4 {
-  @apply text-xl mt-6 mb-3 tracking-wide
+  @apply text-xl mt-6 mb-3 tracking-wide font-bold
 }
 
 h5 {
@@ -39,7 +37,7 @@ h5 {
 }
 
 ul {
-  @apply mt-6;
+  @apply mt-6 list-disc pl-4;
   padding-inline-start: 1rem;
 }
 
