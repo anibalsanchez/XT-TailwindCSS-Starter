@@ -1,6 +1,6 @@
 {
   "name": "xt-tailwindcss-starter",
-  "version": "1.0.3",
+  "version": "2.0.3",
   "description": "A Tailwind CSS Starter. Based on Tailwind CSS, Webpack, PostCSS, cssnano and purgecss. Fully optimized for top performance.",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
