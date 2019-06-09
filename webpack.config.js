@@ -6,15 +6,10 @@
  * @see       https://www.extly.com
  */
 
-const path = require('path');
-const glob = require('glob');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 
-const PATHS = {
-  src: path.join(__dirname, 'src'),
-};
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './src/styles.css',
@@ -22,30 +17,26 @@ module.exports = {
   module: {
     rules: [{
       test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
-            }
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: process.env.NODE_ENV === 'development',
           },
-          'postcss-loader',
-        ],
-      }),
+        },
+        'css-loader',
+        'postcss-loader',
+      ],
     }, ],
   },
   plugins: [
-    new ExtractTextPlugin('styles.css', {
-      disable: process.env.NODE_ENV === 'development',
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html',
     }),
-    // new PurgecssPlugin({
-    //   paths: glob.sync(`${PATHS.src}/*`),
-    //   whitelistPatterns: [/w-/],
-    // }),
   ],
 };
