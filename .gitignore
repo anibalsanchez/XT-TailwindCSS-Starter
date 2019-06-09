@@ -1,14 +1,16 @@
 # Project management
-.vscode/
 .editorconfig
 .eslintrc.json
+.gitkeep
+.idea
 .jsbeautifyrc
 .jshintrc
 .markdownlint.json
-jsconfig.json
-.php_cs.dist
 .php_cs
-.gitkeep
+.php_cs.dist
+.vagrant
+.vscode
+jsconfig.json
 
 # Composer
 composer.phar

@@ -10,7 +10,6 @@ const path = require('path');
 const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -43,9 +42,5 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html',
     }),
-    // new PurgecssPlugin({
-    //   paths: glob.sync(`${PATHS.src}/*`),
-    //   whitelistPatterns: [/w-/],
-    // }),
   ],
 };
