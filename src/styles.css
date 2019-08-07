@@ -4,16 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
-.top-32-lite {
-  top: 7rem
+body {
+  @apply font-sans leading-normal bg-white
 }
 
 a {
   @apply text-link no-underline
-}
-
-footer a {
-  @apply text-link no-underline text-grey
 }
 
 p {
@@ -25,7 +21,7 @@ h2 {
 }
 
 h3 {
-  @apply text-2xl mb-8 font-bold
+  @apply text-2xl my-8 font-bold
 }
 
 h4 {
@@ -33,19 +29,101 @@ h4 {
 }
 
 h5 {
-  @apply text-lg mt-4 mb-2 tracking-wide
+  @apply text-lg mt-4 mb-2 tracking-wide font-bold
 }
 
 ul {
-  @apply mt-6 list-disc pl-4;
+  @apply my-6 list-disc pl-4;
   padding-inline-start: 1rem;
 }
 
-.article-info-term {
+li>ul {
+  @apply mt-0
+}
+
+figcaption {
+  @apply text-sm
+}
+
+blockquote {
+  @apply bg-grey-light rounded-lg px-6 py-4 my-4 italic
+}
+
+blockquote p {
+  @apply mt-2
+}
+
+.header-background {
+  @apply bg-grey-dark overflow-hidden opacity-90
+}
+
+.navigation-block {
+  @apply static
+}
+
+.logo-element {
+  @apply w-5/6 text-3xl
+}
+
+.languages-element ul {
+  @apply flex items-center mt-0 ml-6 pl-6 list-none p-0
+}
+
+.languages-element li {
+  @apply list-none p-0
+}
+
+.languages-element img {
+  @apply px-2 py-2
+}
+
+.about-me img {
+  @apply rounded-full
+}
+
+.main-container-block {
+  @apply static text-grey;
+}
+
+.top-32-lite {
+  top: 7rem
+}
+
+.breadcrumbs-block {
+  @apply flex-row pr-4 bg-grey-light opacity-50 rounded
+}
+
+.breadcrumbs-block ul {
+  @apply list-none p-0 mt-0 px-2 py-4 mb-6
+}
+
+.breadcrumbs-block li {
+  @apply inline-block
+}
+
+.blog-block .items-leading {
+  @apply pb-16
+}
+
+.blog-block .items-row {
+  @apply pb-8
+}
+
+.blog-block .items-leading img,
+.blog-block .item img {
+  @apply my-4 border border-link rounded-lg
+}
+
+.blog-block .items-leading code,
+.blog-block .item code {
+  @apply block p-4
+}
+
+.blog-block .article-info-term {
   display: none;
 }
 
-dl.article-info dd {
+.blog-block dl.article-info dd {
   @apply text-lg
 }
 
@@ -61,6 +139,39 @@ dl.article-info dd {
   @apply px-3 py-4
 }
 
-footer {
-  @apply text-orange-hot
+.tags {
+  @apply list-none p-0
+}
+
+.pagination {
+  @apply mb-4
+}
+
+.pagination p {
+  @apply text-sm text-right
+}
+
+.pagination ul {
+  @apply inline-block list-none p-0 text-sm shadow rounded mt-4
+}
+
+.pagination li {
+  @apply text-center inline-block p-0
+}
+
+.pagination li span,
+.pagination li a {
+  @apply px-2 py-2 inline-block
+}
+
+.pagination li span {
+  @apply opacity-25
+}
+
+.footer-element {
+  @apply bg-oldlace text-center text-orange-hot
+}
+
+.footer-element a {
+  @apply text-link no-underline
 }
