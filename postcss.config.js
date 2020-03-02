@@ -14,15 +14,16 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || []
 });
 
+const nano = require('cssnano')({
+  preset: 'advanced',
+});
+
 module.exports = {
   plugins: [
     require('postcss-import'),
     require('tailwindcss'),
     require('postcss-nested'),
 
-    ...process.env.NODE_ENV === 'production' ? [purgecss] : [],
-    require('cssnano')({
-      preset: 'advanced',
-    }),
+    ...process.env.NODE_ENV === 'production' ? [purgecss, nano] : [],
   ],
 };
