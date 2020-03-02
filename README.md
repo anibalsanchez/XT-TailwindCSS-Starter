@@ -40,6 +40,17 @@ npm run prod
 
 After that you will have a ready to deploy bundle at `/dist`
 
+## Changelog
+
+### 3.0.0
+
+Update to Tailwind CSS v1.2.0, including Tailwind UI support.
+
+- Tailwind CSS v1.2.0
+- Support of [Tailwind UI](https://tailwindui.com/)
+- Addition of PostCSS best practices, [postcss-import](https://www.npmjs.com/package/postcss-import) and [postcss-nested](https://www.npmjs.com/package/postcss-nested)
+- Minimum tailwind.config.js
+
 ## Contributing
 
 Have a lot of experience with Webpack and suggestions on how we could improve this starter template? We'd love a PR!

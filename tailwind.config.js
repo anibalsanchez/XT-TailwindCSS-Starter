@@ -1,12 +1,10 @@
+// tailwind.config.js
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   theme: {
     extend: {
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-      },
+      screens: defaultTheme.screens,
       colors: {
         // My Colors
         'blue-happy': '#2d6987',
