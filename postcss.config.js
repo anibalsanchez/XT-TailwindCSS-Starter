@@ -6,6 +6,12 @@
  * @see       https://www.extly.com
  */
 
+const postcssImport = require('postcss-import');
+const tailwindCss = require('tailwindcss');
+const postcssNested = require('postcss-nested');
+
+const autoprefixer = require('autoprefixer');
+
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     './src/**/*.html',
@@ -20,10 +26,11 @@ const nano = require('cssnano')({
 
 module.exports = {
   plugins: [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('postcss-nested'),
+    postcssImport,
+    tailwindCss,
+    postcssNested,
 
+    autoprefixer,
     ...process.env.NODE_ENV === 'production' ? [purgecss, nano] : [],
   ],
 };
