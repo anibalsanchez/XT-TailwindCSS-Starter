@@ -59,3 +59,5 @@ tslint.json
 /var/
 
 # Symlinks
+
+package-lock.json
