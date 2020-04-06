@@ -13,7 +13,9 @@ For future reference:
 - [Tailwind CSS has arrived at the Joomla scene](https://blog.anibalhsanchez.com/en/10-blogging/lost-and-found/47-tailwind-css-has-arrived-at-the-joomla-scene.html)
 - [anibalsanchez/XT-Tailwind-for-Joomla](https://github.com/anibalsanchez/XT-Tailwind-for-Joomla)
 
-To get started, clone the project and install the dependencies:
+**Prerequisites**: Before you use this starter, you must install [Node.js](https://nodejs.org/).
+
+To get started, clone the project (or download the ZIP file) and install the dependencies:
 
 ```
 # Using npm
