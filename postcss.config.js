@@ -6,31 +6,43 @@
  * @see       https://www.extly.com
  */
 
-const postcssImport = require('postcss-import');
-const tailwindCss = require('tailwindcss');
-const postcssNested = require('postcss-nested');
+ // Declaration of PostCss plugins
+ const postcssImport = require('postcss-import');
+ const tailwindCss = require('tailwindcss');
+ const postcssNested = require('postcss-nested');
+ const autoprefixer = require('autoprefixer');
 
-const autoprefixer = require('autoprefixer');
+ const productionMode = process.env.NODE_ENV === 'production';
 
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: [
-    './src/**/*.html',
-  ],
+ // Configure PostCss
+ const purgecss = require('@fullhuman/postcss-purgecss')({
+   // Specify the paths to all of the template files in your project
+   content: [
+     './src/**/*.html',
+     './src/**/*.vue',
+     './src/**/*.jsx',
+     // etc.
+   ],
 
-  defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || []
-});
+   // Include any special characters you're using in this regular expression
+   //   Ref: https://tailwindcss.com/course/optimizing-for-production
+   defaultExtractor: content => content.match(/[A-Za-z0-9-_:]/g) || []
+ });
 
-const nano = require('cssnano')({
-  preset: 'advanced',
-});
+ // More minification of CSS
+ const cssnano = require('cssnano')({
+   preset: 'advanced',
+ });
 
-module.exports = {
-  plugins: [
-    postcssImport,
-    tailwindCss,
-    postcssNested,
+ // Declare export for PostCss processing
+ module.exports = {
+   plugins: [
+     postcssImport,
+     tailwindCss,
+     postcssNested,
+     autoprefixer,
 
-    autoprefixer,
-    ...process.env.NODE_ENV === 'production' ? [purgecss, nano] : [],
-  ],
-};
+     // Only purge and minify in production
+     ...(productionMode ? [purgecss, cssnano] : []),
+   ],
+ };
