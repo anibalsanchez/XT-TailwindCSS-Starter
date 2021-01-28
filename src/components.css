@@ -49,7 +49,18 @@
 }
 
 .blog-block {
-  /* @apply prose; */
+  a {
+    @apply text-link no-underline;
+  }
+
+  li {
+    @apply mt-0 mb-0;
+  }
+
+  ul > li {
+    position: static;
+    padding-left: 0;
+  }
 
   .items-leading {
     @apply pb-16;

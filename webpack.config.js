@@ -1,15 +1,13 @@
 /**
  * @author     Extly, CB <team@extly.com>
- * @copyright  Copyright (c)2012-2020 Extly, CB All rights reserved.
+ * @copyright  Copyright (c)2012-2021 Extly, CB All rights reserved.
  * @license    GNU General Public License version 3 or later; see LICENSE.txt
  *
  * @see       https://www.extly.com
  */
 
 // Define the pages to be prototyped
-const prototypePages = [
-  'index',
-];
+const prototypePages = ['index'];
 
 // Declaration of Webpack plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -26,7 +24,8 @@ const devMode = process.env.NODE_ENV === 'development';
 const productionMode = !devMode;
 
 // The proxy mode is only used within a template package
-const proxyMode = process.env.npm_lifecycle_event === 'dev-proxy' &&
+const proxyMode =
+  process.env.npm_lifecycle_event === 'dev-proxy' &&
   packageConfig.config &&
   packageConfig.config.proxyURL;
 
@@ -47,10 +46,12 @@ const plugins = [
 if (devMode && !proxyMode) {
   plugins.push(
     ...prototypePages.map(
-      page => new HtmlWebpackPlugin({
-        filename: page + '.html',
-        template: 'src/' + page + '.html',
-      }))
+      (page) =>
+        new HtmlWebpackPlugin({
+          filename: page + '.html',
+          template: 'src/' + page + '.html',
+        })
+    )
   );
 }
 
@@ -65,7 +66,7 @@ if (proxyMode) {
       files: ['**/*.php'],
       cors: true,
       reloadDelay: 0,
-    }),
+    })
   );
 }
 
@@ -74,7 +75,8 @@ if (proxyMode) {
 if (proxyMode || productionMode) {
   // Copy files
   plugins.push(
-    new WebpackOnBuildPlugin([{
+    new WebpackOnBuildPlugin([
+      {
         from: path.resolve(__dirname, './dist/main.css'),
         to: path.resolve(__dirname, './css/template.css'),
       },
@@ -82,22 +84,29 @@ if (proxyMode || productionMode) {
         from: path.resolve(__dirname, './dist/main.js'),
         to: path.resolve(__dirname, './js/template.js'),
       },
-    ]),
+    ])
   );
 
   // If there is an extra folder,
   //  copy also the css file to the extra destination
   if (packageConfig.config && packageConfig.config.extraCCProxyFolder) {
     plugins.push(
-      new WebpackOnBuildPlugin([{
+      new WebpackOnBuildPlugin([
+        {
           from: path.resolve(__dirname, './dist/main.css'),
-          to: path.resolve(packageConfig.config.extraCCProxyFolder, './css/template.css'),
+          to: path.resolve(
+            packageConfig.config.extraCCProxyFolder,
+            './css/template.css'
+          ),
         },
         {
           from: path.resolve(__dirname, './dist/main.js'),
-          to: path.resolve(packageConfig.config.extraCCProxyFolder, './js/template.js'),
+          to: path.resolve(
+            packageConfig.config.extraCCProxyFolder,
+            './js/template.js'
+          ),
         },
-      ]),
+      ])
     );
   }
 }
@@ -107,22 +116,25 @@ module.exports = {
   entry: './src/styles.css',
   mode: process.env.NODE_ENV,
   module: {
-    rules: [{
-      test: /\.css$/,
-      use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            hmr: devMode,
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: devMode,
+            },
           },
-        },
 
-        // Load css
-        'css-loader',
+          // Load css
+          'css-loader',
 
-        // Load PostCss, see postcss.config.js
-        'postcss-loader',
-      ],
-    }, ],
+          // Load PostCss, see postcss.config.js
+          'postcss-loader',
+        ],
+      },
+    ],
   },
   plugins,
 };

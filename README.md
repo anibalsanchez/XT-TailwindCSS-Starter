@@ -44,6 +44,14 @@ After that you will have a ready to deploy bundle at `/dist`
 
 ## Changelog
 
+### 4.0.0
+
+- Update to Tailwind CSS v2.0.2
+- Clean dependencies to have Tailwind CSS and WebPack
+- Purge with Tailwind CSS
+- Remove @fullhuman/postcss-purgecss
+- Usability improvements, optimizations and code styling
+
 ### 3.0.0
 
 Update to Tailwind CSS v1.2.0, including Tailwind UI support.
@@ -61,6 +69,6 @@ This starter is based on the original project created by Adam Wathan here: <http
 
 ## Copyright & License
 
-- Copyright (c)2012-2020 Extly, CB. All rights reserved.
+- Copyright (c)2012-2021 Extly, CB. All rights reserved.
 - Distributed under the GNU General Public License version 3 or later; see LICENSE
 - This project is dedicated to [Andrea Gentil](http://www.twitter.com/andreagentil) ;-D
