@@ -49,7 +49,7 @@
 }
 
 .blog-block {
-  @apply prose;
+  /* @apply prose; */
 
   .items-leading {
     @apply pb-16;
