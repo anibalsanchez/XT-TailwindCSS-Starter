@@ -6,7 +6,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "serve": "cross-env NODE_ENV=development webpack-dev-server",
     "dev-build": "cross-env NODE_ENV=development webpack",
-    "prod": "cross-env NODE_ENV=production webpack --no-progress"
+    "prod": "cross-env NODE_ENV=production webpack --no-progress",
+    "update-browserslist": "npx browserslist@latest --update-db"
   },
   "repository": {
     "type": "git",
