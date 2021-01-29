@@ -1,8 +1,22 @@
-// tailwind.config.js
-const defaultTheme = require('tailwindcss/defaultTheme');
+/**
+ * @author     Extly, CB <team@extly.com>
+ * @copyright  Copyright (c)2012-2021 Extly, CB All rights reserved.
+ * @license    GNU General Public License version 3 or later; see LICENSE.txt
+ *
+ * @see       https://www.extly.com
+ */
+
+const aspectRatio = require('@tailwindcss/aspect-ratio');
+const forms = require('@tailwindcss/forms');
+const lineClamp = require('@tailwindcss/line-clamp');
+const typography = require('@tailwindcss/typography');
+const ui = require('@tailwindcss/ui')({
+  layout: 'sidebar',
+});
+
+// const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  // Purge and minification on PostCSS, postcss.config.js
   purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
 
   theme: {
@@ -62,9 +76,10 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require('@tailwindcss/ui')({
-      layout: 'sidebar',
-    }),
-    require('@tailwindcss/typography'),
+    aspectRatio,
+    forms,
+    lineClamp,
+    typography,
+    ui,
   ],
 };

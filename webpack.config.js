@@ -24,10 +24,9 @@ const devMode = process.env.NODE_ENV === 'development';
 const productionMode = !devMode;
 
 // The proxy mode is only used within a template package
-const proxyMode =
-  process.env.npm_lifecycle_event === 'dev-proxy' &&
-  packageConfig.config &&
-  packageConfig.config.proxyURL;
+const proxyMode = process.env.npm_lifecycle_event === 'dev-proxy'
+  && packageConfig.config
+  && packageConfig.config.proxyURL;
 
 // Output filenames
 const cssOutputfilename = devMode ? '[name].css' : '[name].css'; // [hash].
@@ -46,12 +45,11 @@ const plugins = [
 if (devMode && !proxyMode) {
   plugins.push(
     ...prototypePages.map(
-      (page) =>
-        new HtmlWebpackPlugin({
-          filename: page + '.html',
-          template: 'src/' + page + '.html',
-        })
-    )
+      (page) => new HtmlWebpackPlugin({
+        filename: `${page}.html`,
+        template: `src/${page}.html`,
+      }),
+    ),
   );
 }
 
@@ -66,7 +64,7 @@ if (proxyMode) {
       files: ['**/*.php'],
       cors: true,
       reloadDelay: 0,
-    })
+    }),
   );
 }
 
@@ -84,7 +82,7 @@ if (proxyMode || productionMode) {
         from: path.resolve(__dirname, './dist/main.js'),
         to: path.resolve(__dirname, './js/template.js'),
       },
-    ])
+    ]),
   );
 
   // If there is an extra folder,
@@ -96,17 +94,17 @@ if (proxyMode || productionMode) {
           from: path.resolve(__dirname, './dist/main.css'),
           to: path.resolve(
             packageConfig.config.extraCCProxyFolder,
-            './css/template.css'
+            './css/template.css',
           ),
         },
         {
           from: path.resolve(__dirname, './dist/main.js'),
           to: path.resolve(
             packageConfig.config.extraCCProxyFolder,
-            './js/template.js'
+            './js/template.js',
           ),
         },
-      ])
+      ]),
     );
   }
 }

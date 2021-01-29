@@ -6,45 +6,29 @@
  * @see       https://www.extly.com
  */
 
-// Declaration of PostCss plugins
 const postcssImport = require('postcss-import');
-const tailwindCss = require('tailwindcss');
+const tailwindcss = require('tailwindcss');
 const postcssNested = require('postcss-nested');
 const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
-const productionMode = process.env.NODE_ENV === 'production';
-
-// Configure PostCss
-// @fullhuman/postcss-purgecss
-
-//  const purgecss = require('@fullhuman/postcss-purgecss')({
-//    // Specify the paths to all of the template files in your project
-//    content: [
-//      './src/**/*.html',
-//      './src/**/*.vue',
-//      './src/**/*.jsx',
-//      // etc.
-//    ],
-
-//    // Include any special characters you're using in this regular expression
-//    //   Ref: https://tailwindcss.com/course/optimizing-for-production
-//    defaultExtractor: content => content.match(/[A-Za-z0-9-_:]/g) || []
-//  });
-
-// More minification of CSS
-const cssnano = require('cssnano')({
-  preset: 'advanced',
-});
+const isProductionMode = process.env.NODE_ENV === 'production';
 
 // Declare export for PostCss processing
 module.exports = {
   plugins: [
     postcssImport,
-    tailwindCss,
+    tailwindcss,
     postcssNested,
     autoprefixer,
 
-    // Only purge and minify in production
-    ...(productionMode ? [cssnano] : []),
+    // Only minify for production
+    ...(isProductionMode
+      ? [
+        cssnano({
+          preset: 'advanced',
+        }),
+      ]
+      : []),
   ],
 };

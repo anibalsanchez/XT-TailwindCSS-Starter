@@ -50,6 +50,10 @@ After that you will have a ready to deploy bundle at `/dist`
 - Clean dependencies to have Tailwind CSS and WebPack
 - Purge with Tailwind CSS
 - Remove @fullhuman/postcss-purgecss
+- Remove @tailwindcss/custom-forms
+- Integrate @tailwindcss/aspect-ratio
+- Integrate @tailwindcss/forms
+- Integrate @tailwindcss/line-clamp
 - Usability improvements, optimizations and code styling
 
 ### 3.0.0
