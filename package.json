@@ -3,25 +3,42 @@
   "version": "5.0.0",
   "description": "A Tailwind CSS Starter. Based on Tailwind CSS CLI v3. Fully optimized for top performance.",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/styles.css -o ./dist/main.css --watch",
-    "serve": "npx parcel src/index.html"
+    "dev-cli": "npx tailwindcss -i ./src/styles.css -o ./dist/main.css --watch",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "serve": "cross-env NODE_ENV=development webpack-dev-server",
+    "dev-build": "cross-env NODE_ENV=development webpack",
+    "prod": "cross-env NODE_ENV=production webpack --no-progress",
+    "update-browserslist": "npx browserslist@latest --update-db"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:anibalsanchez/XT-TailwindCSS-Starter.git"
   },
   "keywords": [
-    "Tailwind, CSS, CLI, PostCSS, tailwindcss, starter"
+    "Tailwind, CSS, CLI, PostCSS, Webpack, tailwindcss, starter"
   ],
   "author": "Extly CB",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "devDependencies": {
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.6",
+    "postcss-loader": "^6.2.1",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-copy-on-build-plugin": "^1.0.4",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
-    "parcel": "^2.2.0",
+    "cssnano": "^5.0.15",
+    "cssnano-preset-advanced": "^5.1.10",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
     "tailwindcss": "^3.0.13"

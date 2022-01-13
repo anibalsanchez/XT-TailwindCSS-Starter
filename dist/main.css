@@ -1,10 +1,213 @@
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/styles.css ***!
+  \************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Muli);
+/*!****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/base.css ***!
+  \****************************************************************/
+body {
+  @apply font-sans leading-normal bg-white;
+}
+
+a {
+  @apply text-link no-underline;
+}
+
+p {
+  @apply mt-6;
+}
+
+h2 {
+  @apply text-3xl mb-3 font-bold;
+}
+
+h3 {
+  @apply text-2xl my-8 font-bold;
+}
+
+h4 {
+  @apply text-xl mt-6 mb-3 tracking-wide font-bold;
+}
+
+h5 {
+  @apply text-lg mt-4 mb-2 tracking-wide font-bold;
+}
+
+ul {
+  @apply my-6 list-disc pl-4;
+  padding-inline-start: 1rem;
+}
+
+li > ul {
+  @apply mt-0;
+}
+
+figcaption {
+  @apply text-sm;
+}
+
+blockquote {
+  @apply bg-grey-light rounded-lg px-6 py-4 my-4 italic;
+}
+
+blockquote p {
+  @apply mt-2;
+}
+
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components.css ***!
+  \**********************************************************************/
+.header-background {
+  @apply bg-grey-dark overflow-hidden opacity-90;
+}
+
+.navigation-block {
+  @apply static;
+}
+
+.logo-element {
+  @apply w-5/6 text-3xl;
+}
+
+.languages-element {
+  ul {
+    @apply flex items-center mt-0 ml-6 pl-6 list-none p-0;
+  }
+
+  li {
+    @apply list-none p-0;
+  }
+
+  img {
+    @apply px-2 py-2;
+  }
+}
+
+.about-me img {
+  @apply rounded-full;
+}
+
+.main-container-block {
+  @apply static text-grey;
+}
+
+.top-32-lite {
+  top: 7rem;
+}
+
+.breadcrumbs-block {
+  @apply flex-row pr-4 bg-grey-light opacity-50 rounded;
+
+  ul {
+    @apply list-none p-0 mt-0 px-2 py-4 mb-6;
+  }
+
+  li {
+    @apply inline-block;
+  }
+}
+
+.blog-block {
+  a {
+    @apply text-link no-underline;
+  }
+
+  li {
+    @apply mt-0 mb-0;
+  }
+
+  ul > li {
+    position: static;
+    padding-left: 0;
+  }
+
+  .items-leading {
+    @apply pb-16;
+  }
+
+  .items-row {
+    @apply pb-8;
+  }
+
+  .items-leading img,
+  .item img {
+    @apply my-4 border border-link rounded-lg;
+  }
+  .items-leading code,
+  .item code {
+    @apply block p-4;
+  }
+
+  .article-info-term {
+    display: none;
+  }
+
+  dl.article-info dd {
+    @apply text-lg;
+  }
+}
+
+.tags {
+  @apply list-none p-0;
+
+  li {
+    @apply inline rounded-full bg-blue-happy px-2 py-1 text-xs mr-3;
+  }
+
+  li a {
+    @apply text-white;
+  }
+}
+
+.pagination {
+  @apply mb-4;
+
+  li {
+    @apply px-3 py-4;
+  }
+
+  p {
+    @apply text-sm text-right;
+  }
+
+  ul {
+    @apply inline-block list-none p-0 text-sm shadow rounded mt-4;
+  }
+
+  li {
+    @apply text-center inline-block p-0;
+  }
+
+  li span,
+  li a {
+    @apply px-2 py-2 inline-block;
+  }
+
+  li span {
+    @apply opacity-25;
+  }
+}
+
+.footer-element {
+  @apply bg-oldlace text-center text-orange-hot;
+
+  a {
+    @apply text-link no-underline;
+  }
+}
+
+/*!*********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/utilities.css ***!
+  \*********************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/styles.css (1) ***!
+  \****************************************************************************************************************/
 /*
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 */
-
-@import url('https://fonts.googleapis.com/css?family=Muli');
 
 /*
 ! tailwindcss v3.0.13 | MIT License | https://tailwindcss.com
@@ -18,14 +221,10 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
 }
 
 ::before,
@@ -41,17 +240,12 @@
 */
 
 html {
-  line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
-  font-family: muli, "Helvetica Neue", Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 4 */
+     tab-size: 4; /* 3 */
+  font-family: muli, "Helvetica Neue", Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
 }
 
 /*
@@ -60,10 +254,8 @@ html {
 */
 
 body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
 }
 
 /*
@@ -73,12 +265,9 @@ body {
 */
 
 hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
 }
 
 /*
@@ -131,10 +320,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /*
@@ -172,12 +359,9 @@ sup {
 */
 
 table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
 }
 
 /*
@@ -191,18 +375,12 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
 }
 
 /*
@@ -223,12 +401,9 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
 }
 
 /*
@@ -270,10 +445,8 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /*
@@ -290,10 +463,8 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /*
@@ -355,25 +526,19 @@ textarea {
 */
 
 input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
 }
 
 /*
@@ -407,10 +572,8 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
 }
 
 /*
@@ -485,7 +648,7 @@ input::placeholder,textarea::placeholder{
 }
 
 select{
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27M6 8l4 4 4-4%27/%3e%3c/svg%3e");
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
@@ -557,11 +720,11 @@ select{
 }
 
 [type='checkbox']:checked{
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e");
 }
 
 [type='radio']:checked{
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e");
 }
 
 [type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{
@@ -570,7 +733,7 @@ select{
 }
 
 [type='checkbox']:indeterminate{
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 16 16%27%3e%3cpath stroke=%27white%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M4 8h8%27/%3e%3c/svg%3e");
   border-color: transparent;
   background-color: currentColor;
   background-size: 100% 100%;
@@ -642,170 +805,3 @@ select{
   --tw-backdrop-sepia:  ;
 }
 
-@import './base.css';
-
-.container{
-  width: 100%;
-}
-
-@media (min-width: 640px){
-  .container{
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px){
-  .container{
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px){
-  .container{
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px){
-  .container{
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px){
-  .container{
-    max-width: 1536px;
-  }
-}
-
-@import './components.css';
-
-.absolute{
-  position: absolute;
-}
-
-.top-32-lite{
-  top: 7rem;
-}
-
-.z-10{
-  z-index: 10;
-}
-
-.z-40{
-  z-index: 40;
-}
-
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mb-8{
-  margin-bottom: 2rem;
-}
-
-.inline-block{
-  display: inline-block;
-}
-
-.inline{
-  display: inline;
-}
-
-.flex{
-  display: flex;
-}
-
-.flow-root{
-  display: flow-root;
-}
-
-.h-32-lite{
-  height: 7rem;
-}
-
-.w-full{
-  width: 100%;
-}
-
-.list-none{
-  list-style-type: none;
-}
-
-.flex-wrap{
-  flex-wrap: wrap;
-}
-
-.fill-current{
-  fill: currentColor;
-}
-
-.px-4{
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.pt-32-lite{
-  padding-top: 7rem;
-}
-
-.font-bold{
-  font-weight: 700;
-}
-
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-oldlace{
-  --tw-text-opacity: 1;
-  color: rgb(255 246 233 / var(--tw-text-opacity));
-}
-
-.no-underline{
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
-@import "./utilities.css";
-
-@media (min-width: 640px){
-  .sm\:ml-8{
-    margin-left: 2rem;
-  }
-
-  .sm\:w-2\/3{
-    width: 66.666667%;
-  }
-
-  .sm\:w-1\/3{
-    width: 33.333333%;
-  }
-
-  .sm\:flex-nowrap{
-    flex-wrap: nowrap;
-  }
-
-  .sm\:pr-4{
-    padding-right: 1rem;
-  }
-}
-
-@media (min-width: 1024px){
-  .lg\:px-0{
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}

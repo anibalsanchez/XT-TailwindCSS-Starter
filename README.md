@@ -1,10 +1,10 @@
 # Tailwind CSS Starter Project
 
-A Tailwind CSS Starter. Based on Tailwind CSS, and PostCSS. Fully optimized for top performance.
+A Tailwind CSS Starter. Based on Tailwind CSS, Webpack and PostCSS. Fully optimized for top performance.
 
 - [Tailwind CSS](https://tailwindcss.com) - The Utility-First CSS Framework. A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink), David Hemphill (@davidhemphill) and Steve Schoger (@steveschoger).
-- [Parcel](https://parceljs.org/)
-- [PostCSS](https://postcss.org/)
+- [Webpack](https://webpack.js.org)
+- [PostCSS](https://postcss.org)
 
 For future reference:
 
@@ -61,7 +61,6 @@ npm install -D tailwindcss@latest \
 ```
 
 - Migration to Tailwind CLI - https://tailwindcss.com/docs/installation
-- Migrate from Webpack to Parcel
 
 ### 4.0.0
 
@@ -87,5 +86,5 @@ Update to Tailwind CSS v1.2.0, including Tailwind UI support.
 ## Copyright & License
 
 - Copyright (c)2019-2022 Extly, CB. All rights reserved.
-- Distributed under the GNU General Public License version 3 or later; see LICENSE
+- MIT License; see LICENSE
 - This project is dedicated to [Andrea Gentil](http://www.twitter.com/andreagentil) ;-D

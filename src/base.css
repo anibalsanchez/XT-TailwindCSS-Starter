@@ -3,7 +3,7 @@ body {
 }
 
 a {
-  @apply text-link no-underline;
+  @apply text-extly no-underline;
 }
 
 p {

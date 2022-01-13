@@ -1,7 +1,7 @@
 /**
  * @author     Extly, CB <team@extly.com>
  * @copyright  Copyright (c)2019-2022 Extly, CB All rights reserved.
- * @license    GNU General Public License version 3 or later; see LICENSE.txt
+ * @license    MIT; see LICENSE.txt
  *
  * @see       https://www.extly.com
  */
