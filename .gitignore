@@ -1,8 +1,1 @@
 node_modules
-dist/*.*.css
-dist/*.*.css.map
-dist/*.*.js
-dist/*.*.js.map
-.parcel-cache
-dist/index.es.*.js
-dist/index.es.*.js.map
