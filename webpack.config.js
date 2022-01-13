@@ -7,10 +7,11 @@
  */
 
 // Declaration of Webpack plugins
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const WebpackCopyOnBuildPlugin = require('webpack-copy-on-build-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 // Define the pages to be prototyped
 const prototypePages = [
@@ -77,38 +78,42 @@ if (proxyMode) {
 if (proxyMode || productionMode) {
     // Copy files
     plugins.push(
-        new WebpackCopyOnBuildPlugin([
-            {
-                from: path.resolve(__dirname, './dist/main.css'),
-                to: path.resolve(__dirname, './css/template.css'),
-            },
-            {
-                from: path.resolve(__dirname, './dist/main.js'),
-                to: path.resolve(__dirname, './js/template.js'),
-            },
-        ]),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, './dist/main.css'),
+                    to: path.resolve(__dirname, './css/template.css'),
+                },
+                {
+                    from: path.resolve(__dirname, './dist/main.js'),
+                    to: path.resolve(__dirname, './js/template.js'),
+                },
+            ]
+        }),
     );
 
     // If there is an extra folder,
     //  copy also the css file to the extra destination
     if (packageConfig.config && packageConfig.config.extraCCProxyFolder) {
         plugins.push(
-            new WebpackCopyOnBuildPlugin([
-                {
-                    from: path.resolve(__dirname, './dist/main.css'),
-                    to: path.resolve(
-                        packageConfig.config.extraCCProxyFolder,
-                        './css/template.css',
-                    ),
-                },
-                {
-                    from: path.resolve(__dirname, './dist/main.js'),
-                    to: path.resolve(
-                        packageConfig.config.extraCCProxyFolder,
-                        './js/template.js',
-                    ),
-                },
-            ]),
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: path.resolve(__dirname, './dist/main.css'),
+                        to: path.resolve(
+                            packageConfig.config.extraCCProxyFolder,
+                            './css/template.css',
+                        ),
+                    },
+                    {
+                        from: path.resolve(__dirname, './dist/main.js'),
+                        to: path.resolve(
+                            packageConfig.config.extraCCProxyFolder,
+                            './js/template.js',
+                        ),
+                    },
+                ]
+            }),
         );
     }
 }

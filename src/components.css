@@ -1,138 +1,327 @@
-.header-background {
-  @apply bg-grey-dark overflow-hidden opacity-90;
-}
-
 .navigation-block {
-  @apply static;
+  @apply bg-white;
+
+  .header {
+    @apply flex;
+  }
 }
 
 .logo-element {
-  @apply w-5/6 text-3xl;
+  @apply inline-block w-2/3;
+
+  a {
+    @apply text-xl font-bold text-indigo-600
+  }
+
+  @screen md {
+    a {
+      @apply text-3xl;
+    }
+  }
+
+  .site-description {
+  }
 }
 
+/*
+--- mod_languages for Joomla 3 ---
+
 .languages-element {
-  ul {
-    @apply flex items-center mt-0 ml-6 pl-6 list-none p-0;
+  @apply flex-initial;
+
+  img {
+    @apply p-4;
   }
 
   li {
     @apply list-none p-0;
   }
 
-  img {
-    @apply px-2 py-2;
+  ul {
+    @apply flex items-center mt-0 ml-6 pl-6 list-none p-0;
   }
+
+  a {
+    @apply inline-block pl-2 whitespace-nowrap text-sm;
+  }
+
+  li.lang-active a {
+    text-decoration: underline !important;
+  }
+}
+*/
+
+/* --- mod_languages for Joomla 4 --- */
+.languages-element {
+  @apply inline-block w-1/3;
+
+  ul {
+    @apply m-0 list-none pl-0 block;
+
+    li {
+      @apply inline-block ml-4;
+    }
+  }
+}
+
+div.mod-languages ul li.lang-active a {
+  @apply underline;
 }
 
 .about-me img {
   @apply rounded-full;
 }
 
-.main-container-block {
-  @apply static text-grey;
-}
+.aside-block {
+  @apply mt-4;
 
-.top-32-lite {
-  top: 7rem;
+  ul {
+    @apply my-6 list-disc pl-4;
+    padding-inline-start: 1rem;
+  }
+
+  li > ul {
+    @apply mt-0;
+  }
 }
 
 .breadcrumbs-block {
-  @apply flex-row pr-4 bg-grey-light opacity-50 rounded;
+  @apply flex-row bg-white rounded shadow-lg p-6;
 
-  ul {
-    @apply list-none p-0 mt-0 px-2 py-4 mb-6;
-  }
+  ul, ol {
+    @apply flex flex-wrap list-none p-0 mt-0 px-2 py-4;
 
-  li {
-    @apply inline-block;
+    li {
+      @apply flex-initial whitespace-nowrap p-2;
+    }
   }
 }
 
+.divider img {
+  @apply inline-block;
+}
+
 .blog-block {
-  a {
-    @apply text-link no-underline;
-  }
-
-  li {
-    @apply mt-0 mb-0;
-  }
-
-  ul > li {
-    position: static;
-    padding-left: 0;
-  }
-
-  .items-leading {
-    @apply pb-16;
-  }
-
-  .items-row {
-    @apply pb-8;
-  }
-
-  .items-leading img,
-  .item img {
-    @apply my-4 border border-link rounded-lg;
-  }
-  .items-leading code,
-  .item code {
-    @apply block p-4;
-  }
-
   .article-info-term {
     display: none;
+  }
+
+  code {
+    @apply block p-4;
+
+    /* Force the styles */
+    padding: 1rem !important;
+    font-size: 1em !important;
+    color: #f8f8f2 !important;
+    font-weight: 400 !important;
+  }
+
+  dl.article-info dd {
+    @apply mt-2 mb-4 text-lg;
   }
 
   dl.article-info dd {
     @apply text-lg;
   }
+
+  img {
+    @apply my-4 rounded-lg;
+  }
+
+  .items-leading {
+    @apply pt-16;
+  }
+
+  .items-row {
+    @apply pt-8;
+  }
 }
 
 .tags {
-  @apply list-none p-0;
+  @apply list-none my-4 p-0;
 
   li {
-    @apply inline rounded-full bg-blue-happy px-2 py-1 text-xs mr-3;
+    @apply inline-block rounded-full bg-blue-900 px-4 py-2 text-xs mr-4 mt-2;
+    /* Just to force the style over prose */
+    padding-left: 1rem !important;
+  }
+
+  /* To avoid prose disc */
+  li::before {
+    content: none !important;
   }
 
   li a {
-    @apply text-white;
+    @apply text-white no-underline;
+    /* Just to force the style over prose */
+    color: #ffffff !important;
+    color: rgba(255, 255, 255, 255) !important;
+    text-decoration: none !important;
   }
 }
 
-.pagination {
-  @apply mb-4;
+/* --- Pagination for Joomla 3 --- */
+div.pagination {
+  @apply flex-1 flex justify-between;
 
-  li {
-    @apply px-3 py-4;
-  }
-
-  p {
-    @apply text-sm text-right;
+  p.counter {
+    @apply hidden;
   }
 
   ul {
-    @apply inline-block list-none p-0 text-sm shadow rounded mt-4;
+    @apply flex-1 flex justify-between pl-0;
   }
 
   li {
-    @apply text-center inline-block p-0;
+    @apply hidden relative items-center border border-gray-300 -ml-px bg-white text-sm leading-5 font-medium text-gray-500 rounded-md;
   }
 
-  li span,
-  li a {
-    @apply px-2 py-2 inline-block;
+  li.pagination-prev,
+  li.pagination-next {
+    @apply inline-flex;
   }
 
   li span {
-    @apply opacity-25;
+    @apply px-3 py-2;
+  }
+
+  li a {
+    @apply px-3 py-2 transition ease-in-out duration-150;
+  }
+
+  .pagenav {
+    @apply active:bg-gray-100 active:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:ring-blue-400 hover:text-gray-400;
+  }
+
+  @screen sm {
+    @apply flex-1 flex items-center justify-between;
+
+    ul {
+      @apply list-none relative z-0 flex-none inline-flex shadow-sm;
+    }
+
+    li {
+      @apply inline-flex rounded-none;
+    }
+
+    li a {
+      @apply -ml-px;
+    }
+
+    p.counter {
+      @apply block m-0 text-sm leading-5 text-gray-700;
+    }
+
+    ul:first-child {
+      @apply ml-0;
+    }
+
+    li.pagination-start {
+      @apply rounded-l-md;
+    }
+
+    li.pagination-end {
+      @apply rounded-r-md;
+    }
+  }
+}
+
+.pager {
+  @apply flex-1 flex justify-between pl-0;
+
+  li {
+    @apply relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white;
+
+    padding-left: 1rem !important;
+  }
+
+  li::before {
+    content: none !important;
+  }
+
+  a {
+    @apply active:bg-gray-100 active:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:ring-blue-400 hover:text-gray-400;
+  }
+}
+
+/* --- Pagination for Joomla 4 --- */
+nav.pagination__wrapper {
+  @apply mb-4;
+
+  ul {
+    @apply relative z-0 inline-flex rounded-md shadow-sm -space-x-px;
+  }
+
+  li {
+    @apply list-none relative inline-flex items-center px-4 py-2 bg-white border-gray-300 text-gray-500 hover:bg-gray-50 border text-sm font-medium;
+  }
+
+  li.disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  li.page-item-start {
+    @apply px-2 rounded-l-md;
+  }
+
+  li.page-item-end {
+    @apply px-2 rounded-r-md;
+  }
+
+  li.active {
+    @apply z-10 bg-indigo-50 border-indigo-500 text-indigo-600;
+  }
+
+  li.page-item-goto-page {
+    @apply hidden md:inline-flex;
+  }
+
+  svg {
+    @apply h-4 w-4;
   }
 }
 
 .footer-element {
-  @apply bg-oldlace text-center text-orange-hot;
+  @apply bg-blue-900 text-center text-blue-900 px-4 py-8 lg:px-0 mt-8;
 
   a {
-    @apply text-link no-underline;
+    @apply text-white no-underline;
   }
+}
+
+.aside-container {
+  @apply bg-white rounded shadow-lg w-full mb-8 sm:w-1/3 sm:ml-8 p-6;
+}
+
+.aside-block {
+  .moduletable {
+    @apply rounded overflow-hidden shadow-lg bg-white p-4 mt-12;
+  }
+
+  .moduletable h3 {
+    @apply bg-gray-200 rounded-full text-center px-3 py-1;
+  }
+
+  .moduletable ul {
+    list-style-type: circle;
+
+    li {
+      @apply leading-8;
+    }
+  }
+}
+
+.tagspopular a {
+  @apply block;
+}
+
+.item-page .prose ul {
+}
+
+.blog-item {
+  @apply bg-white rounded shadow-lg p-6;
+}
+
+.item-page {
+  @apply bg-white rounded shadow-lg p-6 mt-14;
 }

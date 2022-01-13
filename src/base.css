@@ -1,13 +1,17 @@
 body {
-  @apply font-sans leading-normal bg-white;
+  @apply bg-indigo-50;
 }
 
 a {
-  @apply text-extly no-underline;
+  @apply text-blue-900 no-underline;
 }
 
 p {
   @apply mt-6;
+}
+
+h1 {
+  @apply text-4xl mb-3 font-bold;
 }
 
 h2 {
@@ -31,18 +35,18 @@ ul {
   padding-inline-start: 1rem;
 }
 
-li > ul {
-  @apply mt-0;
-}
-
 figcaption {
   @apply text-sm;
 }
 
 blockquote {
-  @apply bg-grey-light rounded-lg px-6 py-4 my-4 italic;
+  @apply bg-gray-100 rounded-lg px-6 py-4 my-4 italic;
+
+  p {
+    @apply mt-2;
+  }
 }
 
-blockquote p {
-  @apply mt-2;
+.visually-hidden {
+  @apply hidden;
 }
