@@ -1,6 +1,6 @@
 /**
  * @author     Extly, CB <team@extly.com>
- * @copyright  Copyright (c)2012-2021 Extly, CB All rights reserved.
+ * @copyright  Copyright (c)2019-2022 Extly, CB All rights reserved.
  * @license    GNU General Public License version 3 or later; see LICENSE.txt
  *
  * @see       https://www.extly.com
@@ -10,14 +10,13 @@ const aspectRatio = require('@tailwindcss/aspect-ratio');
 const forms = require('@tailwindcss/forms');
 const lineClamp = require('@tailwindcss/line-clamp');
 const typography = require('@tailwindcss/typography');
-const ui = require('@tailwindcss/ui')({
-  layout: 'sidebar',
-});
-
 // const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+  content: [
+    './dist/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
 
   theme: {
     extend: {
@@ -74,12 +73,10 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [
     aspectRatio,
     forms,
     lineClamp,
     typography,
-    ui,
   ],
 };

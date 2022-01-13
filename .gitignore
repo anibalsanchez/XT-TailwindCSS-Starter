@@ -1,63 +1,8 @@
-# Project management
-.editorconfig
-.eslintrc.json
-.gitkeep
-.idea
-.jsbeautifyrc
-.jshintrc
-.markdownlint.json
-.php_cs
-.php_cs.dist
-.vagrant
-.vscode
-jsconfig.json
-
-# Composer
-composer.phar
-vendor/
-composer.lock
-
-# Node.js
-node_modules/
-
-# Cordova
-/hooks/
-/platforms/
-#/plugins/
-/typings/
-
-# Build files - Release directory
-/build/release
-/build/templates/platform
-/platform
-
-# Test configuration
-/tests/config.php
-/Tests/config.php
-
-# Version and manifest files
-/component/*.xml
-/modules/*/*/*.xml
-/plugins/*/*/*.xml
-
-# Language files (symlinked)
-/component/language/*
-/modules/*/*/language/*
-/plugins/*/*/language/*
-
-# Ionic
-.sourcemaps/
-tslint.json
-/www/assets/*
-/www/build/*
-
-# App for Joomla
-/component/media/app/
-/component/media/service/
-
-# Symfony
-/var/
-
-# Symlinks
-
-package-lock.json
+node_modules
+dist/*.*.css
+dist/*.*.css.map
+dist/*.*.js
+dist/*.*.js.map
+.parcel-cache
+dist/index.es.*.js
+dist/index.es.*.js.map

@@ -1,12 +1,10 @@
-# Tailwind CSS Webpack Starter Project
+# Tailwind CSS Starter Project
 
-A Tailwind CSS Starter. Based on Tailwind CSS, Webpack, PostCSS, cssnano and purgecss. Fully optimized for top performance.
+A Tailwind CSS Starter. Based on Tailwind CSS, and PostCSS. Fully optimized for top performance.
 
 - [Tailwind CSS](https://tailwindcss.com) - The Utility-First CSS Framework. A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink), David Hemphill (@davidhemphill) and Steve Schoger (@steveschoger).
-- [Webpack](https://webpack.js.org/)
+- [Parcel](https://parceljs.org/)
 - [PostCSS](https://postcss.org/)
-- [cssnano](https://cssnano.co/)
-- [Purgecss](https://www.purgecss.com)
 
 For future reference:
 
@@ -17,20 +15,22 @@ For future reference:
 
 To get started, clone the project (or download the ZIP file) and install the dependencies:
 
-```
-# Using npm
+```sh
+# Install dependencies
 npm install
 ```
 
-After that, start up Webpack Development Server:
-
 ```
+# Build with Tailwind CLI
 npm run dev
 ```
 
-The page is rendered here <http://localhost:8080/>.
+```
+# Serve with Parcel
+npm run serve
+```
 
-Webpack Development Server will watch `/src/styles.css` and `/tailwind.js` and rebuild your stylesheet on every change. You can play around with `/src/index.html` to see the effects of your changes.
+The page is rendered here <http://localhost:8080/>.
 
 The sample page renders [my blog](https://blog.anibalhsanchez.com) layout redesigned with Tailwind ;-)
 
@@ -43,6 +43,25 @@ npm run prod
 After that you will have a ready to deploy bundle at `/dist`
 
 ## Changelog
+
+### 5.0.0
+
+- Upgrade to Tailwind CSS v3 - https://tailwindcss.com/docs/upgrade-guide
+- Migrate `tailwind.config.js` from `purge` to `content`
+- Migrate `tailwind.config.js` remove `variants`
+
+```sh
+npm install -D tailwindcss@latest \
+  @tailwindcss/typography@latest \
+  @tailwindcss/forms@latest \
+  @tailwindcss/aspect-ratio@latest \
+  @tailwindcss/line-clamp@latest \
+  postcss@latest \
+  autoprefixer@latest
+```
+
+- Migration to Tailwind CLI - https://tailwindcss.com/docs/installation
+- Migrate from Webpack to Parcel
 
 ### 4.0.0
 
@@ -65,14 +84,8 @@ Update to Tailwind CSS v1.2.0, including Tailwind UI support.
 - Addition of PostCSS best practices, [postcss-import](https://www.npmjs.com/package/postcss-import) and [postcss-nested](https://www.npmjs.com/package/postcss-nested)
 - Minimum tailwind.config.js
 
-## Contributing
-
-Have a lot of experience with Webpack and suggestions on how we could improve this starter template? We'd love a PR!
-
-This starter is based on the original project created by Adam Wathan here: <https://github.com/tailwindcss/webpack-starter>.
-
 ## Copyright & License
 
-- Copyright (c)2012-2021 Extly, CB. All rights reserved.
+- Copyright (c)2019-2022 Extly, CB. All rights reserved.
 - Distributed under the GNU General Public License version 3 or later; see LICENSE
 - This project is dedicated to [Andrea Gentil](http://www.twitter.com/andreagentil) ;-D
