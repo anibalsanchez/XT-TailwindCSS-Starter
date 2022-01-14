@@ -20,12 +20,12 @@ To get started, clone the project (or download the ZIP file) and install the dep
 npm install
 ```
 
-```
+```sh
 # Build with Tailwind CLI
 npm run dev
 ```
 
-```
+```sh
 # Serve with Parcel
 npm run serve
 ```
@@ -36,7 +36,7 @@ The sample page renders [my blog](https://blog.anibalhsanchez.com) layout redesi
 
 To build a production bundle run:
 
-```
+```sh
 npm run prod
 ```
 
